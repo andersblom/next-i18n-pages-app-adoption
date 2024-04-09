@@ -11,7 +11,9 @@ export default function Search(props) {
       <div>Search (SSR) (pages)</div>
       <div>Locale from getSSRProps: {locale}</div>
       <div>Locale from useRouter: {clientSideLocale}</div>
-      <Link href={`/${locale}/product/1`}>Take me to a product</Link>
+      <Link href={`/${locale}/product/1`} className="link">
+        Take me to a product
+      </Link>
     </main>
   );
 }

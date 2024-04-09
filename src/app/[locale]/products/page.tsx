@@ -14,7 +14,9 @@ export default async function Products(props) {
     <main>
       <div>Products (SSR) (app)</div>
       <div>Locale from params: {locale}</div>
-      <Link href={`/${locale}/product/1`}>Take me to a product</Link>
+      <Link href={`/${locale}/product/1`} className="link">
+        Take me to a product
+      </Link>
     </main>
   );
 }

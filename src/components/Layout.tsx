@@ -4,12 +4,17 @@ import { locales } from "@/locales";
 export const Layout = ({ children, locale }) => {
   return (
     <div>
-      <div className="mb-2 bg-slate-400">
+      <div className="mb-2 bg-slate-300">
         <div>current lang: {locale}</div>
         <div>
           locales:{" "}
           {locales.map((lang) => (
-            <Link href={`/${lang}`} locale={lang} key={lang} className="mr-2">
+            <Link
+              href={`/${lang}`}
+              locale={lang}
+              key={lang}
+              className="mr-2 link"
+            >
               {lang}
             </Link>
           ))}
@@ -18,16 +23,24 @@ export const Layout = ({ children, locale }) => {
       <div className="mb-2 bg-slate-200">
         <ul className="flex">
           <li className="mr-4">
-            <Link href={`/${locale}`}>Home</Link>
+            <Link href={`/${locale}`} className="link">
+              Home
+            </Link>
           </li>
           <li className="mr-4">
-            <Link href={`/${locale}/products`}>Products</Link>
+            <Link href={`/${locale}/products`} className="link">
+              Products
+            </Link>
           </li>
           <li className="mr-4">
-            <Link href={`/${locale}/search`}>Search</Link>
+            <Link href={`/${locale}/search`} className="link">
+              Search
+            </Link>
           </li>
           <li>
-            <Link href={`/${locale}/old-app`}>Old app (fallback proxy)</Link>
+            <Link href={`/${locale}/old-app`} className="link">
+              Old app (fallback proxy)
+            </Link>
           </li>
         </ul>
       </div>

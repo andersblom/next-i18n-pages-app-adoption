@@ -21,3 +21,7 @@
     text-wrap: balance;
   }
 }
+
+.link {
+  @apply underline text-blue-600;
+}
