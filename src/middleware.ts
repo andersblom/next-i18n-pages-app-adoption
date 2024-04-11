@@ -1,12 +1,8 @@
-import createMiddleware from "next-intl/middleware";
-import { locales } from "./locales";
+import { chain } from "./middleware/chainable";
+import { loggingMiddleware } from "./middleware/logging";
+import { localizedRoutingMiddleware } from "./middleware/localize-routes";
 
-export default createMiddleware({
-  locales,
-  defaultLocale: "en-US",
-  localePrefix: "as-needed",
-  localeDetection: false,
-});
+export default chain([localizedRoutingMiddleware, loggingMiddleware]);
 
 export const config = {
   // Skip all paths that should not be internationalized
